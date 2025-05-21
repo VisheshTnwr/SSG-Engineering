@@ -1,0 +1,125 @@
+<!-- careers.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers - SSG Groups</title>
+    <link rel="stylesheet" href="careers.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">SSG Engineering</div>
+      <nav class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#work">Our Work</a>
+        <a href="index.html#services">Services</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <main class="careers-container">
+      <h1>Join Our Team</h1>
+
+      <div class="job">
+        <div class="job-header" tabindex="0">
+          Senior Project Manager
+          <span class="arrow">&#9654;</span>
+        </div>
+        <div class="job-content">
+          <p><strong>Location:</strong> Mumbai, India</p>
+          <p><strong>Job Type:</strong> Full-time</p>
+          <p><strong>Responsibilities:</strong></p>
+          <ul>
+            <li>
+              Lead and manage multiple projects from initiation to delivery.
+            </li>
+            <li>Coordinate with clients and internal teams.</li>
+            <li>Ensure project milestones and deadlines are met.</li>
+          </ul>
+          <button
+            class="apply-btn"
+            onclick="alert('Apply for Senior Project Manager')"
+          >
+            Apply Now
+          </button>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header" tabindex="0">
+          Mechanical Engineer
+          <span class="arrow">&#9654;</span>
+        </div>
+        <div class="job-content">
+          <p><strong>Location:</strong> Pune, India</p>
+          <p><strong>Job Type:</strong> Full-time</p>
+          <p><strong>Responsibilities:</strong></p>
+          <ul>
+            <li>Design, develop, and test mechanical components.</li>
+            <li>
+              Collaborate with cross-functional teams for product development.
+            </li>
+            <li>Ensure compliance with safety and quality standards.</li>
+          </ul>
+          <button
+            class="apply-btn"
+            onclick="alert('Apply for Mechanical Engineer')"
+          >
+            Apply Now
+          </button>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-header" tabindex="0">
+          Electrical Engineer
+          <span class="arrow">&#9654;</span>
+        </div>
+        <div class="job-content">
+          <p><strong>Location:</strong> Bangalore, India</p>
+          <p><strong>Job Type:</strong> Full-time</p>
+          <p><strong>Responsibilities:</strong></p>
+          <ul>
+            <li>Design electrical systems and circuits for projects.</li>
+            <li>Perform system testing and troubleshooting.</li>
+            <li>Work with manufacturing teams for product integration.</li>
+          </ul>
+          <button
+            class="apply-btn"
+            onclick="alert('Apply for Electrical Engineer')"
+          >
+            Apply Now
+          </button>
+        </div>
+      </div>
+    </main>
+    <!-- Modal -->
+    <div class="modal" id="applyModal">
+      <div class="modal-content">
+        <h2>Apply Now</h2>
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <textarea placeholder="Your Message or Resume Link..."></textarea>
+        <button type="submit">Submit</button>
+        <button onclick="closeModal()">Close</button>
+      </div>
+    </div>
+
+    <script>
+      function openModal() {
+        document.getElementById("applyModal").style.display = "flex";
+      }
+      function closeModal() {
+        document.getElementById("applyModal").style.display = "none";
+      }
+      window.onclick = function (event) {
+        if (event.target.id === "applyModal") {
+          closeModal();
+        }
+      };
+    </script>
+  </body>
+</html>
