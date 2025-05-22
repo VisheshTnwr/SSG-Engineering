@@ -57,27 +57,3 @@ document.querySelectorAll(".service-card").forEach((card) => {
     card.style.setProperty("--ripple-y", "50%");
   });
 });
-
-// optimize careers section
-// Accordion functionality
-const jobHeaders = document.querySelectorAll(".job-header");
-
-jobHeaders.forEach((header) => {
-  header.addEventListener("click", () => {
-    const currentlyActive = document.querySelector(".job-header.active");
-    if (currentlyActive && currentlyActive !== header) {
-      currentlyActive.classList.remove("active");
-      currentlyActive.nextElementSibling.classList.remove("open");
-    }
-
-    header.classList.toggle("active");
-    header.nextElementSibling.classList.toggle("open");
-  });
-
-  header.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      header.click();
-    }
-  });
-});

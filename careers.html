@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="careers.css" />
   </head>
   <body>
+    <!-- Navbar Section -->
     <header class="navbar">
       <div class="logo">SSG Engineering</div>
       <nav class="nav-links">
@@ -20,106 +21,138 @@
       </nav>
     </header>
 
-    <main class="careers-container">
-      <h1>Join Our Team</h1>
+    <!-- ======= CAREERS SECTION ======= -->
+    <main class="careers">
+      <h1 class="careers__title">Careers at SSG Groups</h1>
+      <p class="careers__intro">
+        Drive industrial innovation with us. Select a role below and apply.
+      </p>
 
-      <div class="job">
-        <div class="job-header" tabindex="0">
-          Senior Project Manager
-          <span class="arrow">&#9654;</span>
-        </div>
-        <div class="job-content">
-          <p><strong>Location:</strong> Mumbai, India</p>
-          <p><strong>Job Type:</strong> Full-time</p>
-          <p><strong>Responsibilities:</strong></p>
-          <ul>
-            <li>
-              Lead and manage multiple projects from initiation to delivery.
-            </li>
-            <li>Coordinate with clients and internal teams.</li>
-            <li>Ensure project milestones and deadlines are met.</li>
-          </ul>
+      <ul class="careers__list">
+        <!-- Repeat pattern for six jobs -->
+        <li class="job-card">
+          <div class="job-card__info">
+            <h2 class="job-card__title">
+              Project Manager – Industrial Projects
+            </h2>
+            <span class="job-card__loc">Mumbai</span>
+            <p class="job-card__desc">
+              Lead multi-disciplinary projects from concept through
+              commissioning.
+            </p>
+          </div>
           <button
             class="apply-btn"
-            onclick="alert('Apply for Senior Project Manager')"
+            data-position="Project Manager – Industrial Projects"
           >
             Apply Now
           </button>
-        </div>
-      </div>
+        </li>
 
-      <div class="job">
-        <div class="job-header" tabindex="0">
-          Mechanical Engineer
-          <span class="arrow">&#9654;</span>
-        </div>
-        <div class="job-content">
-          <p><strong>Location:</strong> Pune, India</p>
-          <p><strong>Job Type:</strong> Full-time</p>
-          <p><strong>Responsibilities:</strong></p>
-          <ul>
-            <li>Design, develop, and test mechanical components.</li>
-            <li>
-              Collaborate with cross-functional teams for product development.
-            </li>
-            <li>Ensure compliance with safety and quality standards.</li>
-          </ul>
+        <li class="job-card">
+          <div class="job-card__info">
+            <h2 class="job-card__title">
+              Site Engineer – Civil &amp; Infrastructure
+            </h2>
+            <span class="job-card__loc">Pune</span>
+            <p class="job-card__desc">
+              Supervise on-site activities, ensuring adherence to design specs.
+            </p>
+          </div>
           <button
             class="apply-btn"
-            onclick="alert('Apply for Mechanical Engineer')"
+            data-position="Site Engineer – Civil & Infrastructure"
           >
             Apply Now
           </button>
-        </div>
-      </div>
+        </li>
 
-      <div class="job">
-        <div class="job-header" tabindex="0">
-          Electrical Engineer
-          <span class="arrow">&#9654;</span>
-        </div>
-        <div class="job-content">
-          <p><strong>Location:</strong> Bangalore, India</p>
-          <p><strong>Job Type:</strong> Full-time</p>
-          <p><strong>Responsibilities:</strong></p>
-          <ul>
-            <li>Design electrical systems and circuits for projects.</li>
-            <li>Perform system testing and troubleshooting.</li>
-            <li>Work with manufacturing teams for product integration.</li>
-          </ul>
+        <li class="job-card">
+          <div class="job-card__info">
+            <h2 class="job-card__title">
+              Planning Engineer – Industrial Projects
+            </h2>
+            <span class="job-card__loc">Delhi NCR</span>
+            <p class="job-card__desc">
+              Build &amp; monitor schedules; keep milestones on target.
+            </p>
+          </div>
           <button
             class="apply-btn"
-            onclick="alert('Apply for Electrical Engineer')"
+            data-position="Planning Engineer – Industrial Projects"
           >
             Apply Now
           </button>
-        </div>
-      </div>
+        </li>
+
+        <li class="job-card">
+          <div class="job-card__info">
+            <h2 class="job-card__title">AutoCAD Designer – Plant Layouts</h2>
+            <span class="job-card__loc">Hyderabad</span>
+            <p class="job-card__desc">
+              Produce 2D / 3D industrial-layout drawings in AutoCAD.
+            </p>
+          </div>
+          <button
+            class="apply-btn"
+            data-position="AutoCAD Designer – Plant Layouts"
+          >
+            Apply Now
+          </button>
+        </li>
+
+        <li class="job-card">
+          <div class="job-card__info">
+            <h2 class="job-card__title">Procurement Executive – Engineering</h2>
+            <span class="job-card__loc">Ahmedabad</span>
+            <p class="job-card__desc">
+              Source materials &amp; negotiate vendor contracts for projects.
+            </p>
+          </div>
+          <button
+            class="apply-btn"
+            data-position="Procurement Executive – Engineering"
+          >
+            Apply Now
+          </button>
+        </li>
+
+        <li class="job-card">
+          <div class="job-card__info">
+            <h2 class="job-card__title">QA/QC Engineer – Manufacturing</h2>
+            <span class="job-card__loc">Bengaluru</span>
+            <p class="job-card__desc">
+              Inspect fabrication processes; uphold quality &amp; safety
+              standards.
+            </p>
+          </div>
+          <button
+            class="apply-btn"
+            data-position="QA/QC Engineer – Manufacturing"
+          >
+            Apply Now
+          </button>
+        </li>
+      </ul>
     </main>
-    <!-- Modal -->
-    <div class="modal" id="applyModal">
+
+    <!-- ======= MODAL (hidden by default) ======= -->
+    <div id="jobModal" class="modal">
       <div class="modal-content">
-        <h2>Apply Now</h2>
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="Your Email" />
-        <textarea placeholder="Your Message or Resume Link..."></textarea>
-        <button type="submit">Submit</button>
-        <button onclick="closeModal()">Close</button>
+        <span class="modal-close">&times;</span>
+        <h2>Apply for this Job</h2>
+        <form class="modal-form">
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="tel" placeholder="Phone Number" required />
+          <textarea placeholder="Cover Letter (optional)"></textarea>
+          <label for="resume">Upload Resume:</label>
+          <input type="file" id="resume" required />
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
       </div>
     </div>
 
-    <script>
-      function openModal() {
-        document.getElementById("applyModal").style.display = "flex";
-      }
-      function closeModal() {
-        document.getElementById("applyModal").style.display = "none";
-      }
-      window.onclick = function (event) {
-        if (event.target.id === "applyModal") {
-          closeModal();
-        }
-      };
-    </script>
+    <script src="careers.js"></script>
   </body>
 </html>

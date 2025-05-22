@@ -1,9 +1,16 @@
+:root {
+  --accent: #e94f37;
+  --accent-dark: #c53729;
+  --light-bg: #fff8f6;
+  --text-main: #222;
+  --text-sub: #555;
+}
 /* Reset some default browser styles */
 * {
   box-sizing: border-box;
 }
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #fff;
   color: #333;
   margin: 0;
@@ -81,101 +88,170 @@ button {
   background-color: #ff5722;
 }
 
-
 /* Careers Section */
-.careers-container {
-  max-width: 900px;
-  margin: 2rem auto;
+/* ---------- Section ---------- */
+.careers {
+  max-width: 960px;
+  margin: 3rem auto;
   padding: 0 1rem;
-}
-
-.careers-container h1 {
   text-align: center;
-  margin-bottom: 2rem;
-  color: #ff5722;
-  font-weight: 700;
 }
 
-/* --- Accordion Styles --- */
-.job {
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+.careers__title {
+  font-size: 2.2rem;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
 }
-.job-header {
-  background: #fff3e0; /* lighter orange */
-  padding: 1rem 1.5rem;
-  cursor: pointer;
+.careers__intro {
+  color: var(--text-sub);
+  margin-bottom: 2rem;
+}
+
+/* ---------- Job list ---------- */
+.careers__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.job-card {
+  background: var(--light-bg);
+  border-left: 5px solid var(--accent);
+  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  font-size: 1.1rem;
-  user-select: none;
-  transition: background-color 0.3s ease;
-}
-.job-header:hover {
-  background: #ffe0b2;
-}
-.job-header .arrow {
-  transition: transform 0.3s ease;
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-.job-header.active .arrow {
-  transform: rotate(90deg);
+  align-items: flex-start;
+  gap: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
-.job-content {
-  max-height: 0;
-  padding: 0 1.5rem;
-  background: white;
-  overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.35s ease;
+.job-card__info {
+  text-align: left;
+  max-width: 70%;
+}
+.job-card__title {
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin: 0 0 0.4rem;
+}
+.job-card__loc {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  margin-bottom: 0.6rem;
+}
+.job-card__desc {
   font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
-}
-.job-content.open {
-  padding: 1rem 1.5rem;
-  max-height: 500px; /* enough for content */
+  color: var(--text-sub);
+  margin: 0;
 }
 
-.job-content p {
-  margin-top: 0;
-}
-.job-content ul {
-  margin: 0.5rem 0 1rem 1.5rem;
-}
-
-/* --- Apply button --- */
 .apply-btn {
-  background-color: #ff5722;
-  color: white;
+  background: var(--accent);
+  color: #fff;
   border: none;
-  padding: 0.5rem 1.25rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 4px;
   font-weight: 600;
-  transition: background-color 0.3s ease;
-  display: inline-block;
-  text-align: center;
-  margin-top: 1rem;
+  transition: background 0.25s;
 }
 .apply-btn:hover {
+  background: var(--accent-dark);
+}
+
+/* ---------- Modal ---------- */
+/* Modal Background */
+.modal {
+  display: none; /* Keep hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content Box */
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Form Inputs */
+.modal-form input,
+.modal-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.modal-form input:focus,
+.modal-form textarea:focus {
+  border-color: #ff5722;
+  outline: none;
+}
+
+/* File Input Label */
+.modal-form label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Submit Button */
+.modal-form .submit-btn {
+  background-color: #ff5722;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.modal-form .submit-btn:hover {
   background-color: #e64a19;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  nav ul {
-    gap: 1rem;
+/* Optional: Animation */
+@keyframes fadeIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
   }
-  .job-header {
-    font-size: 1rem;
-  }
-  .apply-btn {
-    width: 100%;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
